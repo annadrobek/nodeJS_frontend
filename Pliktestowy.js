@@ -1,4 +1,4 @@
-var liczba = 3;
+var liczba = 4;
 console.log(liczba+liczba);
 
 
