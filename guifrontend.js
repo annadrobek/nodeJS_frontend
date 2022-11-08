@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const port = 80;
 const app = express();
+app.use(express.static('views/pages'))
 app.set('view engine', 'ejs');
 app.get("/", function(req, res1) {
     const http = require('http');
@@ -17,7 +18,7 @@ app.get("/", function(req, res1) {
         });
         res.on('close', () => {
             console.log('Retrieved all data ' + data);
-            res1.render("/opt/frontend/views/pages/index", {serverdate:data});
+            res1.render("pages/index", {serverdate:data});
         });
     });
 });
