@@ -1,19 +1,89 @@
-<!DOCTYPE html>
-<html lang="pl">
+<!DOCTYPE HTML>
+<html>
+
 <head>
-<%- include("../partials/head.ejs") %>
+  <title>Praktyczne aspekty projektowania</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
-<body style="font-weight: bold;background-color: black;font-size: 60px;color: white;">
-<div id="header">
-<%- include("../partials/header.ejs") %>
-</div>
-<div id="main">
-<%- include("../partials/main.ejs") %>
-</div>
-<div id="footer">
-<%- include("../partials/footer.ejs") %>
-</div>
-</section>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1>Projekt:&nbsp;<span class="logo_colour">Anna Drobek&Radoslaw Biereta</span></a></h1>
+          <h2>Proste wyswietlanie daty oraz godziny z backendu.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="banner"></div>
+	  <div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <!-- insert your sidebar items here -->
+<hr>
+<center>
+Dzisiejsza data oraz godzina pobierana z backendu</br>
+<p style="font-weight: 75px;"><%= serverdate %></p>
+</center>
+            <h3>Data oraz godzina</h3>
+            <h4>nowosci</h4>
+            <h5>data i godzina</h5>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h3>Search</h3>
+            <form method="post" action="#" id="search_form">
+              <p>
+                <input class="search" type="text" name="search_field" value="Enter keywords....." />
+                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+              </p>
+            </form>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Projekt na zaliczenie przedmiotu: Praktyczne aspekty projektowania systemow informatycznych</h1>
+        <p>Projekt przy zastosowaniu node.js</p>
+        <p>Zaklada uzycie <strong>Dokera</strong></p>
+        <p>Dokumentacja projektu dostępna TUTAJ</p>
+        
+        <h2>Wazne info</h2>
+        <p>Tjakas tresc</p>
+        <ul>
+          <li>pierwzy punkt</li>
+          <li>drugi</li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p> Wykonie Anna Drobek oraz Radoslaw Biereta</a></p>
+    </div>
+  </div>
 </body>
 </html>
-
