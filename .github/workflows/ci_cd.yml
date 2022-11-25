@@ -9,9 +9,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: docker login
       env:
-        DOCKER_USER: ${{secrets.DOCKERHUBUSER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKERHUBPASSWORD}}
-      run: docker login -u $DOCKER_USER --password-stdin
+        DOCKER_USER: ${{ secrets.DOCKERHUBUSER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKERHUBPASSWORD }}
+      run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag adrb-image-na_lab:$(date +%s)
     - name: Push the Docker image
