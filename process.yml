@@ -1,0 +1,9 @@
+apps:
+  - script: /opt/backend/backend_http.js
+    name: 'backend-app'
+    instances: 1
+    watch: false
+  - script: /opt/frontend/guifrontend.js
+    name: 'frontend-app'
+    instamces: 1
+    watch: false
