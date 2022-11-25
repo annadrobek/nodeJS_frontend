@@ -1,0 +1,35 @@
+@startuml
+title Dokumentacja UML do projektu w NodeJS
+package "Client Area" 
+{
+  package "User Web Browser" 
+  {
+            component "Open Frontend Web Page" as user_action {
+            }
+
+}
+}
+package "Server Area"
+{
+package "Docker" {
+package "Frontend on port 80" as frontend {
+            component Ask4DataFromBackend as ask_backend  {
+            }
+            component Ask4DataFromFrontend as ask_frontend  {
+            }
+
+}
+    package "Backend on port 5000" {
+            component getServerDate {
+                interface "http://localhost:5000/getServerDate" as serve_date 
+            }
+            component getSampleText4Tests {
+                interface "http://localhost:5000/getSampleText4Tests" as serve_sample_text 
+            }
+user_action <--> frontend
+frontend <--> ask_frontend
+frontend <--> ask_backend
+ask_backend <--> serve_date
+ask_backend <--> serve_sample_text
+}
+@enduml
