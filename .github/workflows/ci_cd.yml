@@ -15,4 +15,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag adrb-image-na_lab:$(date +%s)
     - name: Push the Docker image
-      run: docker push $DOCKER_USER/laboratorium
+      run: docker push annadrobek/laboratorium
