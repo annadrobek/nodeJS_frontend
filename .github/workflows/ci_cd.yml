@@ -13,6 +13,6 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKERHUBPASSWORD }}
       run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag laboratorium:latest
+      run: docker build . --file Dockerfile --tag annadrobek/laboratorium:latest
     - name: Push the Docker image
       run: docker push annadrobek/laboratorium:latest
