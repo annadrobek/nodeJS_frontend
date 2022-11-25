@@ -4,7 +4,7 @@ const port = 80;
 const app = express();
 app.use(express.static('views/pages'))
 app.set('view engine', 'ejs');
-app.get("/docs, function(req, res) {res.render("pages/docs", {})});
+app.get("/docs", function(req, res) {res.render("pages/docs", {});});
 app.get("/", function(req, res1) {
     const http = require('http');
     let request = http.get('http://localhost:5000/getServerDate', (res) => {
