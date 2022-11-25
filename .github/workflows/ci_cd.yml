@@ -1,0 +1,18 @@
+name: Docker Image CI & CD
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKERHUBUSER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKERHUBPASSWORD}}
+      run: docker login -u $DOCKER_USER -p DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag adrb-image-na_lab:$(date +%s)
+    - name: Push the Docker image
+      run: docker push ${{secrets.DOCKER_USER}}
