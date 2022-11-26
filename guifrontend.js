@@ -39,8 +39,10 @@ app.get("/getSampleText4Tests", function(req, res1) {
         });
         res.on('close', () => {
  	        console.log('Sample text: ' + data);
-            res1.write(JSON.stringify(data));
+            res1.setHeader('Content-Type', 'application/json');
+            res1.end(JSON.stringify({"SampleText":data}));
         });
+        
     });
 });
 
