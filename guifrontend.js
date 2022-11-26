@@ -22,8 +22,7 @@ app.get("/getSampleText4Tests", function(req, res1)
             console.log('Sample text: ' + data);
             res1.write(JSON.stringify(data));
         });
-    });
-});     
+    });   
 app.get("/", function(req, res1) {{
     const http = require('http');
     let request = http.get('http://localhost:5000/getServerDate', (res) => {
