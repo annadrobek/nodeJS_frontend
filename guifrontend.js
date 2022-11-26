@@ -5,24 +5,6 @@ const app = express();
 app.use(express.static('views/pages'))
 app.set('view engine', 'ejs');
 app.get("/docs", function(req, res) {res.render("pages/docs", {});});
-app.get("/getSampleText4Tests", function(req, res1) 
-        {
-    const http = require('http');
-    let request = http.get('http://localhost:5000/getSampleText4Tests', (res) => {
-        let data ='';
-        if (res.statusCode !== 200) {
-            console.error('Did not get an OK from the server.');
-            res.resume();
-            return;
-        }
-        res.on('data', (chunk) => {
-            data += chunk;
-        });
-        res.on('close', () => {
-            console.log('Sample text: ' + data);
-            res1.write(JSON.stringify(data));
-        });
-    });   
 app.get("/", function(req, res1) {{
     const http = require('http');
     let request = http.get('http://localhost:5000/getServerDate', (res) => {
